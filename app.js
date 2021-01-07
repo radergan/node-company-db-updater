@@ -21,27 +21,27 @@ function runSearch() {
       type: "rawlist",
       message: "What would you like to do?",
       choices: [
-        "a) Find a specific employee",
-        "b) Add a new employee",
-        "c) Remove an employee",
-        "d) List all employees"
+        "Find a specific employee",
+        "Add a new employee",
+        "Remove an employee",
+        "List all employees"
       ]
     })
     .then(function(answer) {
-      switch (answer.action.toLowerCase()) {
-      case "a":
+      switch (answer.action) {
+      case "Find a specific employee":
         findEmployee();
         break;
       /*
-      case "b":
+      case "Add a new employee":
         addEmployee();
         break;
 
-      case "c":
+      case "Remove an employee":
         removeEmployee();
         break;
 
-      case "d":
+      case "List all employees":
         listEmployee();
         break;
       
@@ -55,13 +55,18 @@ function findEmployee() {
     .prompt({
       name: "employee",
       type: "input",
-      message: "Employee name:"
+      message: "Employee name: "
     })
     .then(function(answer) {
-      var query = "SELECT first_name + last_name AS worker_name from employees WHERE worker_name LIKE % ? %";
-      connection.query(query, { worker: answer.employee }, function(err, res) {
-        for (var i = 0; i < res.length; i++) {
-          console.log("Employee: " + res[i].worker_name);
+      var query = "SELECT first_name from employee WHERE ?";
+      connection.query(query, { first_name: answer.employee }, function(err, res) {
+        if (err) throw err;
+        if(res.length > 0){
+          for (var i = 0; i < res.length; i++) {
+            console.log("Employee: " + res[i].first_name);
+          }
+        }else{
+          console.log("No employees match this query.");
         }
         runSearch();
       });
