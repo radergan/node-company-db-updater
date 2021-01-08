@@ -1,6 +1,6 @@
 
 # Node.js Company DB Updater
-[![Watch the video](screenshot.JPG)](node-company-db-updater.webm)
+[![Watch the video](app.gif)](app.mp4)
 
 ## Table of Contents
 * [About](#about)
@@ -18,7 +18,7 @@ This command-line application allows a user to view and search a database of emp
 - Mysql
 
 ## Installation
-Node.js, MySql and Inquirer are required - `npm i` in the root directory will install Inquirer and MySql. A seed database and schema SQL file can both be found in the /schema directory.
+Node.js, MySql and Inquirer are required - `npm i` in the root directory will install Inquirer and MySql. A schema file (or schema + seed file, which the example uses) can be found in the /schema directory.
 
 ## Usage 
 `node app.js` in the root directory will provide the basic command-line GUI leveraging Inquirer. 
