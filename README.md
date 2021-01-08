@@ -1,6 +1,6 @@
 
 # Node.js Company DB Updater
-[![Watch the video](app.gif)](app.mp4)
+[![Watch the video](app.gif)](app.gif)
 
 ## Table of Contents
 * [About](#about)
