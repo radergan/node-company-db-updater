@@ -1,6 +1,6 @@
 
 # Node.js Company DB Updater
-[![Watch the video](app.gif)](app.gif)
+Author: github.com/radergan
 
 ## Table of Contents
 * [About](#about)
@@ -11,6 +11,8 @@
 
 ## About
 This command-line application allows a user to view and search a database of employees using Node.js and [Inquirer.js](https://www.npmjs.com/package/inquirer).
+
+[![Watch the video](app.gif)](app.gif)
 
 ## Dependencies
 - Node.js
